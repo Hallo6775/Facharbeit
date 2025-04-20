@@ -1,0 +1,50 @@
+/* Hauptcontainer für das Tutorial: zentriert Inhalt, sorgt für Hintergrund und Padding */
+.tutorial-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(120deg, #f6f7fb 0%, #e7eaf1 100%);
+    padding: 2.5rem 1rem 1.5rem 1rem;
+}
+/* Überschrift für das Tutorial, groß und fett */
+.tutorial-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 2.2rem;
+    text-align: center;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+}
+.tutorial-steps {
+    max-width: 480px;
+    margin-bottom: 1.7rem;
+    font-size: 1.15rem;
+    color: #444;
+    background: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 3px 18px #ececec33;
+    padding: 1.2rem 1.7rem;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+}
+.tutorial-puzzle {
+    margin: 1.5rem 0 2.1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Button für den nächsten Schritt im Tutorial, mit Abstand */
+#nextStepBtn {
+    margin-top: 0.7rem;
+    min-width: 180px;
+}
+/* Responsive Anpassungen für kleine Bildschirme: kleinere Abstände, Puzzle etwas kleiner */
+@media (max-width: 600px) {
+    .tutorial-steps {
+        padding: 1rem 0.7rem;
+    }
+    .tutorial-puzzle {
+        transform: scale(0.92);
+    }
+}

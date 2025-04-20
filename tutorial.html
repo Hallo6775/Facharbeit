@@ -1,0 +1,31 @@
+<!-- tutorial.html: Tutorial-Seite für Level 0, erklärt das Spiel Schritt für Schritt -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial | Slide Puzzle</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tutorial.css">
+</head>
+<body>
+    <!-- Musik-Schalter: Schaltet die Hintergrundmusik an/aus (global) -->
+    <button id="musicToggle" class="music-toggle" title="Musik an/aus">🔊</button>
+    <!-- Hintergrundmusik für das Tutorial -->
+    <audio id="bgMusic" src="bg-music.mp3" loop preload="auto"></audio>
+    <!-- Hauptcontainer für Tutorial-Schritte, Puzzle und Buttons -->
+    <div class="tutorial-container">
+        <!-- Überschrift für das Tutorial -->
+        <h2 class="tutorial-title">Tutorial: Wie funktioniert das Slide Puzzle?</h2>
+        <!-- Bereich für die einzelnen Tutorial-Schritte und Erklärungen -->
+        <div class="tutorial-steps" id="tutorialSteps"></div>
+        <!-- Hier wird das Mini-Puzzle für das Tutorial angezeigt -->
+        <div class="tutorial-puzzle" id="tutorialPuzzle"></div>
+        <!-- Button für den nächsten Tutorial-Schritt -->
+        <button id="nextStepBtn" class="play-btn">Nächster Schritt</button>
+    </div>
+    <!-- Haupt-JavaScript für Tutorial-Logik und Puzzle-Steuerung -->
+    <script type="module" src="tutorial.js"></script>
+</body>
+</html>

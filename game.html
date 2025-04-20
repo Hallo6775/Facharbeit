@@ -1,0 +1,35 @@
+<!-- game.html: Spielfeld-Ansicht für ein gewähltes Level -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Puzzle Spiel</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <!-- Musik-Schalter: Schaltet die Hintergrundmusik an/aus (global) -->
+    <button id="musicToggle" class="music-toggle" title="Musik an/aus">🔊</button>
+    <!-- Hauptcontainer für das Spielfeld, Leveltitel, Puzzle und Buttons -->
+    <div class="game-container">
+        <!-- Zeigt das aktuelle Level an -->
+        <h2 class="game-title" id="levelTitle">Level</h2>
+        <!-- Hier wird das Puzzle gerendert -->
+        <div class="game-puzzle" id="gamePuzzle"></div>
+        <!-- Zeigt Züge, Zeit, Tipps und Highscore an -->
+        <div class="game-info" id="gameInfo"></div>
+        <!-- Button für das nächste Level (erst sichtbar nach Lösen) -->
+        <button id="nextLevelBtn" class="play-btn" style="display:none;">Nächstes Level</button>
+        <!-- Button zum Neu-Mischen des Puzzles (nur für Level > 0 sichtbar) -->
+        <button id="reshuffleBtn" class="play-btn" style="display:none;">Neu mischen</button>
+        <!-- Zurück zur Level-Auswahl -->
+        <button id="backBtn" class="play-btn">Zurück zur Level-Auswahl</button>
+    </div>
+    <!-- Hintergrundmusik für das Spiel, läuft im Loop -->
+    <audio id="bgMusic" src="bg-music.mp3" loop preload="auto"></audio>
+    <!-- Haupt-JavaScript für Spiellogik und UI -->
+    <script type="module" src="game.js"></script>
+</body>
+</html>

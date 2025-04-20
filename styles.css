@@ -1,0 +1,190 @@
+body {
+
+/* Animierter, großer Musik-Schalter */
+.music-toggle {
+    position: fixed;
+    top: 1.1rem;
+    right: 1.1rem;
+    z-index: 99;
+    background: linear-gradient(135deg, #5eead4 0%, #6366f1 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 32px #6366f155, 0 0px 0 #5eead488;
+    font-size: 2.5rem;
+    width: 4.1rem;
+    height: 4.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s, color 0.18s, box-shadow 0.25s, transform 0.13s;
+    outline: none;
+    border: 2.5px solid #fff;
+    animation: music-pop-in 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+.music-toggle:hover, .music-toggle:focus {
+    background: linear-gradient(135deg, #6366f1 0%, #5eead4 100%);
+    color: #fff;
+    box-shadow: 0 8px 32px #6366f1bb, 0 0px 0 #5eead4cc;
+    transform: scale(1.13) rotate(-5deg);
+    border-color: #6366f1;
+}
+.music-toggle:active {
+    background: linear-gradient(135deg, #5eead4 0%, #6366f1 100%);
+    color: #222;
+    box-shadow: 0 2px 12px #5eead488;
+    transform: scale(0.96) rotate(2deg);
+    border-color: #5eead4;
+}
+.music-toggle.music-animate {
+    animation: music-bounce 0.38s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes music-bounce {
+    0% { transform: scale(1) rotate(0); }
+    35% { transform: scale(1.22) rotate(-10deg); }
+    60% { transform: scale(0.92) rotate(5deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+@keyframes music-pop-in {
+    0% { transform: scale(0.3) rotate(-20deg); opacity: 0; }
+    80% { transform: scale(1.15) rotate(7deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@media (max-width: 650px) {
+    .music-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 2rem;
+        width: 3.1rem;
+        height: 3.1rem;
+    }
+}
+
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+    background: linear-gradient(120deg, #f6f7fb 0%, #e7eaf1 100%);
+    color: #222;
+    overflow: hidden;
+    position: relative;
+} 
+
+.background-anim {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 1;
+    filter: blur(0.5px) brightness(1.06);
+    transition: opacity 0.4s;
+} 
+
+.container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 32px 0 #cfd8dc33, 0 1.5px 0 #ececec44;
+    padding: 3.5rem 5rem;
+    border: 1.5px solid #ececec;
+    backdrop-filter: blur(5px);
+} 
+
+.title {
+    color: #222;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    margin-bottom: 2.2rem;
+    text-shadow: none;
+    filter: none;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+    display: block;
+    text-align: center;
+}
+.title:after {
+    content: "";
+} 
+
+.play-btn {
+    background: linear-gradient(90deg, #5eead4 0%, #6366f1 100%);
+    color: #fff;
+    padding: 1.1rem 3rem;
+    font-size: 1.2rem;
+    border-radius: 1.8rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 3px 11px 0 #6366f133, 0 1px 0 #ececec44;
+    transition: background 0.22s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+    font-weight: 600;
+    letter-spacing: 1px;
+    outline: none;
+    text-shadow: none;
+    margin-top: 0.7rem;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+}
+.play-btn:before {
+    content: "";
+}
+.play-btn:hover {
+    background: linear-gradient(90deg, #6366f1 0%, #5eead4 100%);
+    color: #fff;
+    transform: scale(1.04) translateY(-2px);
+    box-shadow: 0 7px 24px 0 #6366f144;
+}
+@keyframes bounceIn {
+    0% { transform: scale(0.7); opacity: 0; }
+    60% { transform: scale(1.08); opacity: 1; }
+    80% { transform: scale(0.97); }
+    100% { transform: scale(1); }
+} 
+
+/* Puzzle Animation - Modern Minimal */
+.puzzle-piece {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #e7eaf1;
+    border-radius: 1.2rem;
+    border: 2.5px solid #fff;
+    opacity: 0.93;
+    transition: background 0.3s, opacity 0.2s;
+    box-shadow: 0 8px 32px 0 #6366f155, 0 2px 8px #cfd8dc44;
+    filter: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+    font-weight: 500;
+}
+.puzzle-piece:nth-child(even) {
+    background: #f6f7fb;
+    border-radius: 1.2rem;
+    border: 1.5px solid #ececec;
+    opacity: 0.65;
+    box-shadow: 0 1px 6px #ececec22;
+}
+.puzzle-piece:hover {
+    opacity: 1;
+    background: #5eead4;
+    box-shadow: 0 7px 24px #5eead444;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) scale(1); }
+    40% { transform: translateY(-12px) scale(1.03); }
+    70% { transform: translateY(5px) scale(0.99); }
+    100% { transform: translateY(0) scale(1); }
+}
+

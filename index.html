@@ -1,0 +1,34 @@
+<!-- Startseite (index.html): Einstiegspunkt ins Spiel, enthält Musik-Schalter, Titel und Start-Button -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Puzzle</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Musik-Schalter immer ganz oben im Body, damit er überall sichtbar bleibt -->
+    <!-- Musik-Schalter: Schaltet die Hintergrundmusik an/aus -->
+    <button id="musicToggle" class="music-toggle" title="Musik an/aus">🔊</button>
+    <!-- Hintergrundmusik: Wird global für alle Seiten genutzt -->
+    <audio id="bgMusic" src="bg-music.mp3" loop preload="auto"></audio>
+    <!-- Hauptcontainer für Titel und Play-Button -->
+    <div class="container">
+        <!-- Titel des Spiels -->
+        <h1 class="title">Slide Puzzle</h1>
+        <!-- Startet das Spiel und leitet zu den Leveln weiter -->
+        <button class="play-btn" id="playBtn">Play</button>
+    </div>
+    <!-- Haupt-JavaScript für Startseite: Play-Button-Logik -->
+    <script src="main.js" type="module"></script>
+    <!-- Musik-Logik wird jetzt zentral über music.js als Modul eingebunden -->
+    <script type="module">
+      import { initMusicToggle } from './music.js';
+      document.addEventListener('DOMContentLoaded', () => {
+        initMusicToggle();
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+.music-toggle {
+    position: fixed;
+    top: 1.1rem;
+    right: 1.1rem;
+    z-index: 99;
+    background: linear-gradient(135deg, #5eead4 0%, #6366f1 100%);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 32px #6366f155, 0 0px 0 #5eead488;
+    font-size: 2.5rem;
+    width: 4.1rem;
+    height: 4.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.25s, color 0.18s, box-shadow 0.25s, transform 0.13s;
+    outline: none;
+    border: 2.5px solid #fff;
+    animation: music-pop-in 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+/* Hover- und Fokus-Effekt für Musik-Schalter: Farbwechsel und Animation */
+.music-toggle:hover, .music-toggle:focus {
+    background: linear-gradient(135deg, #6366f1 0%, #5eead4 100%);
+    color: #fff;
+    box-shadow: 0 8px 32px #6366f1bb, 0 0px 0 #5eead4cc;
+    transform: scale(1.13) rotate(-5deg);
+    border-color: #6366f1;
+}
+/* Aktiver Zustand (beim Klicken) für Musik-Schalter */
+.music-toggle:active {
+    background: linear-gradient(135deg, #5eead4 0%, #6366f1 100%);
+    color: #222;
+    box-shadow: 0 2px 12px #5eead488;
+    transform: scale(0.96) rotate(2deg);
+    border-color: #5eead4;
+}
+/* Animation beim Umschalten (Bounce) für Musik-Schalter */
+.music-toggle.music-animate {
+    animation: music-bounce 0.38s cubic-bezier(.68,-0.55,.27,1.55);
+}
+/* Keyframes für Bounce-Animation beim Musik-Schalter */
+@keyframes music-bounce {
+    0% { transform: scale(1) rotate(0); }
+    35% { transform: scale(1.22) rotate(-10deg); }
+    60% { transform: scale(0.92) rotate(5deg); }
+    100% { transform: scale(1) rotate(0); }
+}
+/* Keyframes für Pop-in-Animation beim Laden des Musik-Schalters */
+@keyframes music-pop-in {
+    0% { transform: scale(0.3) rotate(-20deg); opacity: 0; }
+    80% { transform: scale(1.15) rotate(7deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+/* Responsive Anpassung: Musik-Schalter auf kleinen Bildschirmen kleiner und näher am Rand */
+/* Responsive Anpassungen für kleine Bildschirme: Layout wird kompakter, Buttons kleiner */
+@media (max-width: 650px) {
+    .music-toggle {
+        top: 0.5rem;
+        right: 0.5rem;
+        font-size: 2rem;
+        width: 3.1rem;
+        height: 3.1rem;
+    }
+}
+
+/* Hauptcontainer für das Spielfeld: zentriert das Spiel, sorgt für Abstand und Hintergrund */
+.game-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: linear-gradient(120deg, #f6f7fb 0%, #e7eaf1 100%);
+    padding: 2.5rem 1rem 1.5rem 1rem;
+    box-sizing: border-box;
+}
+.game-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 2.2rem;
+    text-align: center;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+}
+.game-puzzle {
+    margin: 1.5rem 0 2.1rem 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 520px;
+    box-sizing: border-box;
+    /* Die Spaltenzahl wird dynamisch per JS gesetzt */
+}
+
+/* Automatische Kachelgröße je nach Grid-Größe */
+.game-puzzle {
+    grid-auto-rows: 1fr;
+}
+
+.game-tile {
+    aspect-ratio: 1/1;
+    min-width: 32px;
+    min-height: 32px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-weight: 700;
+    transition: background 0.18s, border-color 0.18s, color 0.18s;
+    cursor: pointer;
+    user-select: none;
+    background: #fff;
+}
+
+@media (max-width: 600px) {
+    .game-puzzle {
+        max-width: 98vw;
+    }
+    .game-tile {
+        max-width: 38px;
+        max-height: 38px;
+        font-size: 1.05rem;
+    }
+}
+
+
+/* Button zum Neu-Mischen des Puzzles */
+/* Button zum Neu-Mischen des Puzzles */
+#reshuffleBtn {
+    background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 3px 18px #6366f133, 0 1.5px 0 #fbbf2444;
+    border: none;
+    outline: none;
+    transition: background 0.22s, color 0.18s, transform 0.18s, box-shadow 0.18s;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    display: block;
+    width: 100%;
+    max-width: 340px;
+}
+#reshuffleBtn:hover, #reshuffleBtn:focus {
+    background: linear-gradient(90deg, #6366f1 0%, #fbbf24 100%);
+    color: #fff;
+    box-shadow: 0 7px 24px 0 #6366f144;
+    transform: scale(1.06) rotate(-8deg);
+}
+#reshuffleBtn:active {
+    background: linear-gradient(90deg, #fbbf24 0%, #6366f1 100%);
+    color: #222;
+    box-shadow: 0 2px 12px #fbbf2444;
+    transform: scale(0.97) rotate(2deg);
+}
+
+#backBtn {
+    margin-top: 1.5rem;
+    min-width: 160px;
+    font-size: 1rem;
+}
+.game-info {
+    margin-bottom: 1.2rem;
+    color: #6366f1;
+    font-size: 1.1rem;
+    font-family: 'Poppins', 'Nunito', Arial, sans-serif;
+    text-align: center;
+    word-break: break-word;
+}
+/* Responsive Anpassungen für Tablets und mittelgroße Bildschirme */
+@media (max-width: 900px) {
+    .game-title {
+        font-size: 1.5rem;
+    }
+    .game-puzzle {
+        max-width: 100vw;
+    }
+    #backBtn {
+        min-width: 120px;
+        font-size: 0.96rem;
+    }
+}
+/* Responsive Anpassungen für kleine Bildschirme/Smartphones */
+@media (max-width: 600px) {
+    .game-title {
+        font-size: 1.15rem;
+    }
+    .game-puzzle {
+        transform: scale(0.92);
+        margin: 1rem 0 1.2rem 0;
+        max-width: 100vw;
+        min-width: 0;
+    }
+    #backBtn {
+        min-width: 90px;
+        font-size: 0.93rem;
+        padding: 0.7rem 1.2rem;
+    }
+    .game-info {
+        font-size: 0.98rem;
+    }
+}

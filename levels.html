@@ -1,0 +1,64 @@
+<!-- levels.html: Level-Auswahlseite, zeigt alle Levelkarten und Musik-Schalter -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levels | Slide Puzzle</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="levels.css">
+</head>
+<body>
+    <!-- Musik-Schalter: Schaltet die Hintergrundmusik an/aus (global) -->
+    <button id="musicToggle" class="music-toggle" title="Musik an/aus">🔊</button>
+    <!-- Hintergrundmusik für die Level-Auswahl -->
+    <audio id="bgMusic" src="bg-music.mp3" loop preload="auto"></audio>
+    <!-- Hauptcontainer für Levelkarten und Titel -->
+    <div class="levels-container">
+        <!-- Überschrift für die Level-Auswahl -->
+        <h2 class="levels-title">Wähle ein Level</h2>
+        <!-- Liste aller Levelkarten -->
+        <div class="levels-list">
+            <!-- Level 0: Tutorial-Karte -->
+            <div class="level-card" id="level0">
+                <div class="level-badge">0</div>
+                <div class="level-card-title">Level 0</div>
+                <div class="level-desc">Tutorial</div>
+            </div>
+            <!-- Level 1: Einfache Stufe -->
+            <div class="level-card locked" id="level1">
+                <div class="level-badge">1</div>
+                <div class="level-card-title">Level 1</div>
+                <div class="level-desc">Einfach</div>
+            </div>
+            <!-- Level 2: Fortgeschrittene Stufe -->
+            <div class="level-card locked" id="level2">
+                <div class="level-badge">2</div>
+                <div class="level-card-title">Level 2</div>
+                <div class="level-desc">Fortgeschritten</div>
+            </div>
+            <!-- Level 3: Profi-Stufe -->
+            <div class="level-card locked" id="level3">
+                <div class="level-badge">3</div>
+                <div class="level-card-title">Level 3</div>
+                <div class="level-desc">Profi</div>
+            </div>
+            <!-- Level 4: Meister-Stufe -->
+            <div class="level-card locked" id="level4">
+                <div class="level-badge">4</div>
+                <div class="level-card-title">Level 4</div>
+                <div class="level-desc">Meister</div>
+            </div>
+            <!-- Level 5: Legendär-Stufe -->
+            <div class="level-card locked" id="level5">
+                <div class="level-badge">5</div>
+                <div class="level-card-title">Level 5</div>
+                <div class="level-desc">Legendär</div>
+            </div>
+        </div>
+    </div>
+    <!-- Haupt-JavaScript für Level-Auswahl und Freischaltung -->
+    <script type="module" src="levels.js"></script>
+</body>
+</html>
